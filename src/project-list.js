@@ -1,4 +1,5 @@
 import { content } from "./dom";
+import { addItemForm } from "./list-item";
 
 
 export const projectList = function(){
@@ -19,7 +20,7 @@ export const projectList = function(){
       delList.textContent='Remove';
   projectContainer.appendChild(delList);
   
-
+    btnList.addEventListener('click',addItemForm);
 
   console.log('test project list');
 }

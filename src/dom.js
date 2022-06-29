@@ -1,3 +1,9 @@
+//page
+export const body = document.querySelector('body');
+export const main = document.querySelector('.main');
+export const header = document.querySelector('.header');
+export const footer = document.querySelector('.footer');
+
 //button
 export const addBtn = document.querySelector('.add-btn');
 export const delBtn = document.querySelector('.del-btn');
