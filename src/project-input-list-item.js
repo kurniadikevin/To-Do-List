@@ -1,5 +1,7 @@
 import { content,main,body,header,footer } from "./dom";
 import { itemListInputUi } from "./list-item-function";
+import {itemArr,itemListInputData} from './list-item-function';
+
 
 export const addItemForm = function(){
         
@@ -73,7 +75,11 @@ submitDom.addEventListener('click',function(){
         contentChild.appendChild(priorityUi);
 
 
-        console.log('subtimed add form!!');//
+        const newValue = new itemListInputData(`${titleDom.value},${noteDom.value},${dueDateDom.value},${priorityDom.value}`)
+        itemArr= newValue.data()
+        console.log('itemarray:'+itemArr);
+
+        console.log('subtimed add form!! formformf');//
         console.log( titleDom.value);//
         formItem.style.display="none";
        

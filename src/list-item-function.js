@@ -7,10 +7,12 @@ const itemListInputData = function(title,note,dueDate,priority){
     this.dueDate = dueDate;
     this.priority = priority;
     this.data = function(){
-        return `${title}, ${note}, ${dueDate}, ${priority}`;
+        const titleArr=[title,note,dueDate,priority];
+        return titleArr;
     }
 }
 
+const itemArr;
 
 
 // for UI
