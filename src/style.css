@@ -65,8 +65,20 @@ body>div{
 
     .project-cont{
         border: 1px solid red;
-        
+        display: grid;
+        grid-template-rows: 4fr 1fr;
     }
+        .project-name-head{
+            font-size: 20pt;
+        }
+
+        .btn-list{
+            width: 100px;
+        }
+
+        .btn-del{
+            width: 100px;
+        }
 
 #form-item{
     width: 500px;
@@ -81,3 +93,28 @@ body>div{
     color: black;
     padding: 10px;
 }
+
+.content-child{
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+}
+    .title-ui{
+        grid-column: 1/2;
+    }
+
+    .note-ui{
+        grid-column: 1/3;
+        grid-row: 2/4;
+    }
+
+    .dueDate-ui{
+        grid-column: 1/2;
+        grid-row: 3/4
+    }
+
+    .priority-ui{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }

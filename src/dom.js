@@ -19,6 +19,7 @@ export const projectMain = document.querySelector('#project-main');
 
 // content 
 export const content = document.querySelector('#content');
+export const contentList = document.querySelector('#content-list');
 
 
 /*

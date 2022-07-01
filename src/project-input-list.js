@@ -1,16 +1,16 @@
-import { content } from "./dom";
+import { content,contentList } from "./dom";
 import { addItemForm } from "./project-input-list-item";
 
 
 export const projectList = function(){
+
   const projectContainer = document.createElement('div');
   projectContainer.classList.add('project-cont');
       const projectHead = document.createElement('div');
       projectHead.classList.add('project-name-head');
       projectHead.textContent= this.textContent ;
-      
-      content.innerHTML='';
-    projectContainer.appendChild(projectHead);
+       content.innerHTML='';
+     projectContainer.appendChild(projectHead);
   content.appendChild(projectContainer);
       const btnList = document.createElement('button');
       btnList.classList.add('btn-list');
