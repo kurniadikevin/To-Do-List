@@ -1,6 +1,12 @@
 import { content,main,body,header,footer } from "./dom";
 import { itemListInputUi } from "./list-item-function";
 
+
+export const delItemForm = function(){
+    content.removeChild(content.lastElementChild);
+}
+
+
 export const addItemForm = function(){
         
         const formItem = document.createElement('div');
