@@ -82,7 +82,7 @@ submitDom.addEventListener('click',function(){
         header.style.opacity='1';
         footer.style.opacity='1';
         
-    
+        
     }
     );
 }
