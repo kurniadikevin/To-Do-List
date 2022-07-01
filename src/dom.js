@@ -19,3 +19,18 @@ export const projectMain = document.querySelector('#project-main');
 
 // content 
 export const content = document.querySelector('#content');
+
+
+/*
+
+    const titleDom = document.querySelector('#title');
+    titleDom.classList.add('title-modal');
+    const noteDom = document.querySelector('#note');
+    noteDom.classList.add('note-modal');
+    const dueDateDom = document.querySelector('#due-date');
+    dueDateDom.classList.add('duedate-modal');
+    const priorityDom = document.querySelector('#priority');
+    priorityDom.classList.add('priority-modal');
+    const submitDom = document.querySelector('#submit');
+    submitDom.classList.add('submit-modal');
+*/

@@ -1,5 +1,5 @@
 import { content } from "./dom";
-import { addItemForm } from "./list-item";
+import { addItemForm } from "./project-input-list-item";
 
 
 export const projectList = function(){
@@ -8,6 +8,7 @@ export const projectList = function(){
       const projectHead = document.createElement('div');
       projectHead.classList.add('project-name-head');
       projectHead.textContent= this.textContent ;
+      
       content.innerHTML='';
     projectContainer.appendChild(projectHead);
   content.appendChild(projectContainer);
@@ -23,4 +24,5 @@ export const projectList = function(){
     btnList.addEventListener('click',addItemForm);
 
   console.log('test project list');
+  
 }
