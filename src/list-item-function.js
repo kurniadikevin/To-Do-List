@@ -1,7 +1,7 @@
 import { content } from "./dom";
 
 //for data
-const itemListInputData = function(title,note,dueDate,priority){
+export const itemListInputData = function(title,note,dueDate,priority){
     this.title = title;
     this.note = note;
     this.dueDate = dueDate;

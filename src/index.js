@@ -1,6 +1,7 @@
 import './style.css';
 import {inputProject,deleteProject} from './project-input';
 import {addBtn,delBtn} from './dom';
+import { listItemData, projectData } from './data';
 
 
 

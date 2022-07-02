@@ -1,5 +1,7 @@
 import { content,contentList } from "./dom";
 import { addItemForm,delItemForm } from "./project-input-list-item";
+import { loopDataAssign } from "./loop-data-assign";
+import { listItemData } from "./data";
 
 
 export const projectList = function(){
@@ -26,5 +28,8 @@ export const projectList = function(){
       delList.addEventListener('click',delItemForm);
 
     console.log('test project list');
-  
+   
+    listItemData;
+    loopDataAssign();
+    console.log(listItemData);
 }

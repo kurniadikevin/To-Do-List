@@ -1,5 +1,6 @@
 import { content,main,body,header,footer } from "./dom";
-import { itemListInputUi } from "./list-item-function";
+import { itemListInputData, itemListInputUi } from "./list-item-function";
+import { listItemData } from "./data";
 
 
 export const delItemForm = function(){
@@ -47,38 +48,56 @@ closeform.addEventListener('click',function(){
     
 const submitDom = document.querySelector('.submit-add');
 submitDom.addEventListener('click',function(){
-        
+
+    //dom from form
+    const titleDom = document.querySelector('#title');
+    const noteDom = document.querySelector('#note');
+    const dueDateDom = document.querySelector('#due-date');
+    const priorityDom = document.querySelector('#priority');
+
+
+
+
+    //new input data
+    itemListInputData;
+    let newInput = new itemListInputData(`${titleDom.value},${noteDom.value},${dueDateDom.value},${priorityDom.value}`);
+    listItemData.push(newInput.data());
+    console.log(listItemData);
+
+    //assign data using loop
+    const contentChildCont = document.createElement('div');
+    contentChildCont.classList.add('content-child-cont');
+    content.appendChild(contentChildCont);
+
+    for( let i=0 ; i< listItemData.length; i++){
+        contentChildCont.innerHTML='';
+
         const contentChild= document.createElement('div');
         contentChild.classList.add('content-child');
-        content.appendChild(contentChild);
+        contentChildCont.appendChild(contentChild);
 
         const titleUi = document.createElement('div');
         titleUi.classList.add('title-ui');
-        const titleDom = document.querySelector('#title');
-        titleUi.textContent = titleDom.value;
+        titleUi.textContent = listItemData[i][0];
         contentChild.appendChild(titleUi);
 
         const noteUi = document.createElement('div');
         noteUi.classList.add('note-ui');
-        const noteDom = document.querySelector('#note');
-        noteUi.textContent= noteDom.value;
+        noteUi.textContent= listItemData[i][1];
         contentChild.appendChild(noteUi);
         
-
         const dueDateUi= document.createElement('div');
         dueDateUi.classList.add('dueDate-ui');
-        const dueDateDom = document.querySelector('#due-date');
-        dueDateUi.textContent= dueDateDom.value;
+        dueDateUi.textContent= listItemData[i][2];
         contentChild.appendChild(dueDateUi);
-
 
         const priorityUi = document.createElement('div');
         priorityUi.classList.add('priority-ui');
-        const priorityDom = document.querySelector('#priority');
-        priorityUi.textContent= priorityDom.value;
+        priorityUi.textContent= listItemData[i][3]
         contentChild.appendChild(priorityUi);
 
-
+    }
+    
         console.log('subtimed add form!!');//
         console.log( titleDom.value);//
         formItem.style.display="none";
