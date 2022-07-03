@@ -37,6 +37,7 @@ export const deleteProject = function(){
     projectData.pop();
     localStorage.setItem('projectName',projectData);
     console.log(projectData);
+    // project propery
 
 }
 

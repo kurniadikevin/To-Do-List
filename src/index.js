@@ -5,7 +5,7 @@ import {addBtn,delBtn} from './dom';
 
 
 
-console.log('testing! OIIIIIIII');
+console.log('testing! OInkkkkk');
 
 //clear
 localStorage.clear();

@@ -5,6 +5,9 @@ import {keyName} from "./project-input-list";
 
 export const delItemForm = function(){
     content.removeChild(content.lastElementChild);
+
+    //remove data on projectlist data
+
 }
 
 
