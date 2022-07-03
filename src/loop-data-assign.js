@@ -6,11 +6,11 @@
     contentChildCont.classList.add('content-child-cont');
     content.appendChild(contentChildCont);
 
-    //keyNameData=[];// clear list when switch project
+   let keyNameData=[];// clear list when switch project
    
 
     let keyName = document.querySelector('.project-name-head').textContent;
-    let keyNameData = JSON.parse(localStorage.getItem(keyName));
+     keyNameData = JSON.parse(localStorage.getItem(keyName));
     console.log('keynamedata'+ keyNameData);
 
  for( let i=0 ; i< keyNameData.length; i++){

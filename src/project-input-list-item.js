@@ -63,7 +63,7 @@ submitDom.addEventListener('click',function(keyName){
 
 
     //new input data
-
+    listItemData=[];
     itemListInputData;
     let newInput = new itemListInputData(`${titleDom.value},${noteDom.value},${dueDateDom.value},${priorityDom.value}`);
     listItemData.push(newInput.data());
@@ -122,7 +122,7 @@ submitDom.addEventListener('click',function(keyName){
         
        
         //test data 
-makeData;
+//makeData;
     }
     );
 }
