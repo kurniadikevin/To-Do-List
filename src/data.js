@@ -1,2 +1,3 @@
 export const projectData = [];
-export const listItemData = [];
+export let listItemData = [];
+export const dataObj={};

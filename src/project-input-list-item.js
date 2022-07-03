@@ -1,6 +1,6 @@
 import { content,main,body,header,footer } from "./dom";
 import { itemListInputData, itemListInputUi } from "./list-item-function";
-import { listItemData } from "./data";
+import { listItemData, projectData, makeData } from "./data";
 
 
 export const delItemForm = function(){
@@ -59,10 +59,15 @@ submitDom.addEventListener('click',function(){
 
 
     //new input data
+
     itemListInputData;
     let newInput = new itemListInputData(`${titleDom.value},${noteDom.value},${dueDateDom.value},${priorityDom.value}`);
     listItemData.push(newInput.data());
     console.log(listItemData);
+
+    //input itemlistdata to project data
+  const projectLocal = localStorage.getItem('projectName');
+  localStorage.setItem(projectLocal, listItemData);
 
     //assign data using loop
     const contentChildCont = document.createElement('div');
@@ -107,7 +112,9 @@ submitDom.addEventListener('click',function(){
         header.style.opacity='1';
         footer.style.opacity='1';
         
-        
+       
+        //test data 
+makeData;
     }
     );
 }

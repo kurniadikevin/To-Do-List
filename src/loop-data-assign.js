@@ -1,10 +1,14 @@
- import { listItemData } from "./data";
+ import { listItemData, projectData } from "./data";
  //assign data using loop
  export const loopDataAssign = function(){
 
     const contentChildCont = document.createElement('div');
     contentChildCont.classList.add('content-child-cont');
     content.appendChild(contentChildCont);
+
+    //listItemData=[];// clear list when switch project
+   
+
 
  for( let i=0 ; i< listItemData.length; i++){
     contentChildCont.innerHTML='';
