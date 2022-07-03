@@ -1,14 +1,14 @@
 import { content,main,body,header,footer } from "./dom";
 import { itemListInputData, itemListInputUi } from "./list-item-function";
 import { listItemData, projectData, makeData } from "./data";
-
+import {keyName} from "./project-input-list";
 
 export const delItemForm = function(){
     content.removeChild(content.lastElementChild);
 }
 
 
-export const addItemForm = function(){
+export const addItemForm = function(keyName){
         
         const formItem = document.createElement('div');
         formItem.setAttribute('id','form-item');
@@ -36,6 +36,7 @@ export const addItemForm = function(){
         formItem.style.opacity='1';
         
         console.log('test form');
+       
 
 const closeform = document.querySelector('.close');
 closeform.addEventListener('click',function(){
@@ -47,7 +48,7 @@ closeform.addEventListener('click',function(){
     
     
 const submitDom = document.querySelector('.submit-add');
-submitDom.addEventListener('click',function(){
+submitDom.addEventListener('click',function(keyName){
 
     //dom from form
     const titleDom = document.querySelector('#title');
@@ -65,16 +66,20 @@ submitDom.addEventListener('click',function(){
     listItemData.push(newInput.data());
     console.log(listItemData);
 
+     keyName = document.querySelector('.project-name-head').textContent;
+
     //input itemlistdata to project data
-  const projectLocal = localStorage.getItem('projectName');
-  localStorage.setItem(projectLocal, listItemData);
+  //const projectLocal = localStorage.getItem('projectName');
+  localStorage.setItem(keyName,JSON.stringify( listItemData));
+
+  let keyNameData = JSON.parse(localStorage.getItem(keyName));
 
     //assign data using loop
     const contentChildCont = document.createElement('div');
     contentChildCont.classList.add('content-child-cont');
     content.appendChild(contentChildCont);
 
-    for( let i=0 ; i< listItemData.length; i++){
+    for( let i=0 ; i< keyNameData.length; i++){
         contentChildCont.innerHTML='';
 
         const contentChild= document.createElement('div');
@@ -83,22 +88,22 @@ submitDom.addEventListener('click',function(){
 
         const titleUi = document.createElement('div');
         titleUi.classList.add('title-ui');
-        titleUi.textContent = listItemData[i][0];
+        titleUi.textContent = keyNameData[i][0];
         contentChild.appendChild(titleUi);
 
         const noteUi = document.createElement('div');
         noteUi.classList.add('note-ui');
-        noteUi.textContent= listItemData[i][1];
+        noteUi.textContent= keyNameData[i][1];
         contentChild.appendChild(noteUi);
         
         const dueDateUi= document.createElement('div');
         dueDateUi.classList.add('dueDate-ui');
-        dueDateUi.textContent= listItemData[i][2];
+        dueDateUi.textContent= keyNameData[i][2];
         contentChild.appendChild(dueDateUi);
 
         const priorityUi = document.createElement('div');
         priorityUi.classList.add('priority-ui');
-        priorityUi.textContent= listItemData[i][3]
+        priorityUi.textContent= keyNameData[i][3]
         contentChild.appendChild(priorityUi);
 
     }

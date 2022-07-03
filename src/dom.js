@@ -11,7 +11,7 @@ export const delBtn = document.querySelector('.del-btn');
 //form
 export const inputForm = document.querySelector('#p-input');
 
-//container
+//container col1
 export const projectMain = document.querySelector('#project-main');
 
 //inputted project (make by eventlistener)

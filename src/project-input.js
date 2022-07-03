@@ -12,14 +12,14 @@ export const inputProject = function(){
        // set array for project name
     localStorage.setItem('projectName',projectData);
 
-    // set key property for one project name
-    //localStorage.setItem(projectAdd,[]);
-    for(let i=0; i< projectData.length;i++){
+    /*
+    // set key property for project name 
+   for(let i=0; i< projectData.length;i++){
         localStorage.setItem(projectData[i],[]);
     }
- 
+ */
 
-    console.log(projectData);
+    console.log('projectData'+ projectData);
     inputForm.value=' ';
     console.log('add btn');
 
@@ -29,6 +29,7 @@ export const inputProject = function(){
         
     }
 }
+
 
 export const deleteProject = function(){
     projectMain.removeChild(projectMain.lastElementChild);

@@ -1,11 +1,11 @@
 import './style.css';
 import {inputProject,deleteProject} from './project-input';
 import {addBtn,delBtn} from './dom';
-import { listItemData, projectData } from './data';
+//import { listItemData, projectData } from './data';
 
 
 
-console.log('testing!');
+console.log('testing! OIIIIIIII');
 
 //clear
 localStorage.clear();

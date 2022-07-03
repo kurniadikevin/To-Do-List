@@ -4,6 +4,7 @@ import { loopDataAssign } from "./loop-data-assign";
 import { listItemData } from "./data";
 
 
+
 export const projectList = function(){
 
   const projectContainer = document.createElement('div');
@@ -11,13 +12,17 @@ export const projectList = function(){
         const projectHead = document.createElement('div');
         projectHead.classList.add('project-name-head');
         projectHead.textContent= this.textContent ;
+        const keyname = this.textContent;
+    
         content.innerHTML='';
       projectContainer.appendChild(projectHead);
     content.appendChild(projectContainer);
+
         const btnList = document.createElement('button');
         btnList.classList.add('btn-list');
         btnList.textContent='Add List';
     projectContainer.appendChild(btnList);
+
         const delList = document.createElement('button');
         delList.classList.add('btn-del');
         delList.textContent='Remove';
