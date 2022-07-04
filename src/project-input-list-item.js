@@ -6,7 +6,14 @@ import {keyName} from "./project-input-list";
 export const delItemForm = function(){
     content.removeChild(content.lastElementChild);
 
-    //remove data on projectlist data
+
+    //remove data on keynamedata array
+     
+    let keyName = document.querySelector('.project-name-head').textContent;
+   let keyNameData = JSON.parse(localStorage.getItem(keyName));
+   keyNameData.splice(-1,1);
+    localStorage.setItem(keyName,JSON.stringify( keyNameData));
+    console.log('key name data delete btn: '+ keyNameData);//
 
 }
 
@@ -60,22 +67,23 @@ submitDom.addEventListener('click',function(keyName){
     const priorityDom = document.querySelector('#priority');
 
 
-
-
-    //new input data
-    listItemData=[];
-    itemListInputData;
-    let newInput = new itemListInputData(`${titleDom.value},${noteDom.value},${dueDateDom.value},${priorityDom.value}`);
-    listItemData.push(newInput.data());
+  keyName = document.querySelector('.project-name-head').textContent;
+    // new input
+    let newInput = new itemListInputData((titleDom.value),(noteDom.value),(dueDateDom.value),(priorityDom.value));
+    let keyNameData = JSON.parse(localStorage.getItem(keyName));
+    
+   
+    // if keyNameData null make array, 
+    if(keyNameData == null){
+        keyNameData = [];
+    } 
+   
+  keyNameData.push(newInput.data());
     console.log(listItemData);
 
-     keyName = document.querySelector('.project-name-head').textContent;
+  localStorage.setItem(keyName,JSON.stringify( keyNameData));
 
-    //input itemlistdata to project data
-  //const projectLocal = localStorage.getItem('projectName');
-  localStorage.setItem(keyName,JSON.stringify( listItemData));
-
-  let keyNameData = JSON.parse(localStorage.getItem(keyName));
+  console.log('key name data: '+ keyNameData);//
 
     //assign data using loop
     const contentChildCont = document.createElement('div');
@@ -120,9 +128,7 @@ submitDom.addEventListener('click',function(keyName){
         header.style.opacity='1';
         footer.style.opacity='1';
         
-       
-        //test data 
-//makeData;
+      
     }
     );
 }

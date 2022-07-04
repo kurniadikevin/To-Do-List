@@ -7,7 +7,7 @@ export const itemListInputData = function(title,note,dueDate,priority){
     this.dueDate = dueDate;
     this.priority = priority;
     this.data = function(){
-        const titleArr=[title,note,dueDate,priority];
+        const titleArr = [title,note,dueDate,priority];
         return titleArr;
     }
 }
