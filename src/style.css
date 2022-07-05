@@ -24,7 +24,7 @@ body>div{
     }
 
 .main>div{
-    border: 1px solid grey;
+    border: 0px solid grey;
 }
 
 .main{
@@ -64,13 +64,17 @@ body>div{
             
 
     .project-cont{
-        border: 1px solid red;
+        border: 0px solid red;
         display: grid;
         grid-template-rows: 4fr 1fr;
+        background-color: rgb(30,30,30);
     }
         .project-name-head{
             font-size: 20pt;
+            padding-left: 10px;
         }
+
+        
 
         .btn-list{
             width: 100px;
@@ -95,13 +99,15 @@ body>div{
 }
 
 .content-child{
-    border: 1px solid white;
+    border-bottom: 1px solid white;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
+    height: 100px;
 }
     .title-ui{
         grid-column: 1/2;
+        font-size: 20pt;
     }
 
     .note-ui{
@@ -117,4 +123,12 @@ body>div{
     .priority-ui{
         grid-column: 2/3;
         grid-row: 3/4;
+    }
+
+    #note{
+        
+        text-align: left;
+        padding-top: 5px;
+        padding-bottom: 100px;
+
     }

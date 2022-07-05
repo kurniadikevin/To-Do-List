@@ -6,15 +6,12 @@ import {keyName} from "./project-input-list";
 export const delItemForm = function(){
     content.removeChild(content.lastElementChild);
 
-
     //remove data on keynamedata array
-     
-    let keyName = document.querySelector('.project-name-head').textContent;
+   let keyName = document.querySelector('.project-name-head').textContent;
    let keyNameData = JSON.parse(localStorage.getItem(keyName));
    keyNameData.splice(-1,1);
     localStorage.setItem(keyName,JSON.stringify( keyNameData));
     console.log('key name data delete btn: '+ keyNameData);//
-
 }
 
 
@@ -28,7 +25,7 @@ export const addItemForm = function(keyName){
         <br>
         <input type="text" id="title" name="title" value=""><br>
         <label for="note">Note</label><br>
-        <input type="text" id="note" name="note" value="" style="width:400px; height: 200px;"><br><br>
+        <input type="text" id="note" name="note" value="" size="50"><br><br>
         <label for="due-date">Due</label><input type="date" id="due-date">
         <select id="priority" name="priority">
         <option value="Urgent">Urgent</option>
